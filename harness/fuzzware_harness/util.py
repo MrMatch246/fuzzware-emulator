@@ -80,6 +80,9 @@ def bytes2int(bs):
     if len(bs) == 8:
         return struct.unpack("<Q", bs)[0]
     from binascii import hexlify
+    if hexlify(bs) == b'000000':
+        print("UPS")
+        return 0
     logger.info("Can not unpack {} bytes: {}".format(len(bs), hexlify(bs)))
     assert False
 
