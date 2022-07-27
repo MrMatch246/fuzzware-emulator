@@ -13,10 +13,10 @@ echo "[+] Unicorn built successfully!"
 echo "[*] Installing Unicorn python bindings..."
 
 # install locally when inside a venv and globally otherwise
-#[[ -z "$VIRTUAL_ENV" ]] && WRAP="sudo -E python3" || WRAP="python3"
-#pushd "$UC_DIR"/bindings/python && UNICORN_ARCHS="arm" $WRAP setup.py install || { popd; exit 1; }; popd
-[[ -z "$VIRTUAL_ENV" ]] && WRAP="sudo -E pypy3" || WRAP="pypy3"
+[[ -z "$VIRTUAL_ENV" ]] && WRAP="sudo -E python3" || WRAP="python3"
 pushd "$UC_DIR"/bindings/python && UNICORN_ARCHS="arm" $WRAP setup.py install || { popd; exit 1; }; popd
+#[[ -z "$VIRTUAL_ENV" ]] && WRAP="sudo -E pypy3" || WRAP="pypy3"
+#pushd "$UC_DIR"/bindings/python && UNICORN_ARCHS="arm" $WRAP setup.py install || { popd; exit 1; }; popd
 
 echo "[+] Unicorn Python bindings installed successfully"
 
