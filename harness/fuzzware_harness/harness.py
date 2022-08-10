@@ -103,7 +103,7 @@ def configure_unicorn(args):
         logger.debug(f"Mapping region {str(rname)} at {hex(size)}, perms: {int(prot)}")
 
         if size & (globs.PAGE_SIZE-1) != 0:
-            logger.warning(f"Size 0x{size:x} of region '{rname}' not page aligned. Aligning to next page boundary size.")
+            #logger.warning(f"Size 0x{size:x} of region '{rname}' not page aligned. Aligning to next page boundary size.")
             size -= size & (globs.PAGE_SIZE-1)
             size += globs.PAGE_SIZE
 
